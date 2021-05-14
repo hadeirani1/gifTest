@@ -18,9 +18,9 @@ This system helps you to perform a keyword search against API and display GIF re
 
 Below you can find all working steps headlines:
 
-- create new project:
+- Create new project:
 
-laravel new testProj
+laravel new gifAppTest
 
 - Create GIF controller:
 
@@ -60,13 +60,13 @@ php artisan db:seed
 
 ## Setup system on your machine steps:
 
-- download all files then uncompress folders.
+- After download go to the project folder using terminal.
 
-- use the command "composer install" to download required packages.
+- Use the command "composer install" to download required packages.
 
-- copy .env.example and name it .env
+- Copy .env.example and name it .env
 
-- create the needed database then update .env file to fill the below information:
+- Create the needed database then update .env file to fill the below information:
 
 DB_CONNECTION=mysql
 
@@ -81,7 +81,7 @@ DB_USERNAME=root
 DB_PASSWORD=
 
 
-- run the below DB commands:
+- Run the below DB commands:
 
 php artisan migrate
 
@@ -111,11 +111,11 @@ http://localhost:8000/api/gif?gif-key=cat
 
 ./vendor/bin/phpunit
 
-- there are some fake data to test project, you can insert into database using the command:
+- There are some fake data to test project, you can insert them into database using the command:
 
 php artisan db:seed
 
-- for test you can search for keywords: cat, boy.
+- For test you can search for keywords: cat, boy.
 
 
 </p>
