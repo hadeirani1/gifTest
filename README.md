@@ -115,6 +115,8 @@ http://localhost:8000/api/gif?gif-key=cat
 
 php artisan db:seed
 
+- for test you can search for keywords: cat, boy.
+
 
 </p>
 
