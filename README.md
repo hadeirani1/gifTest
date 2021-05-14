@@ -87,6 +87,11 @@ php artisan migrate
 
 php artisan db:seed
 
+- Generate auth key:
+
+php artisan key:generate
+
+
 
 - you should deloy using two ports, the first one for website and the second for APIs:
 
