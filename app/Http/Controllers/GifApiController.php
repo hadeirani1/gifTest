@@ -16,17 +16,18 @@ class GifApiController extends Controller
      */
     public function index()
     {
-        //
+        //Calling funcations to get GIFs data using collection
         if(request()->has('gif-key'))
-        return $this->get_gif_by_key(request(),2);
+        return $this->get_gif_by_key(request(),8);
         else
-        return $this->get_all_gifs(request(),2);
+        return $this->get_all_gifs(request(),8);
     }
 
 
     private function get_gif_by_key(Request $request ,$pages)
     {
-        
+
+        //get specific GIF by passing key to collection
             $gif_key = $request->get('gif-key');
             $gif = GifApi::where('key', '=', $gif_key)->paginate($pages)->appends($request->query());;   
             if($gif->isNotEmpty())   
@@ -38,6 +39,7 @@ class GifApiController extends Controller
 
     private function get_all_gifs(Request $request ,$pages)
     {
+        //get all GIFS using collection
         return GifCollection::collection(GifApi::paginate($pages))->appends($request->query());;
     }
 

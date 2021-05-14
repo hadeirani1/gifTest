@@ -18,14 +18,14 @@ class DatabaseSeeder extends Seeder
 
         DB::table('gif_apis')->insert(array(
             array(
-                'key' => 'cat',
-                'name' => 'gif1.gif',
+                'key' => 'boy',
+                'name' => 'gif8.gif',
                 'created_at' => now(),
                 'updated_at' => now(),
             ),
             array(
                 'key' => 'boy',
-                'name' => 'gif2.gif',
+                'name' => 'gif8.gif',
                 'created_at' => now(),
                 'updated_at' => now(),
             ),
@@ -37,19 +37,61 @@ class DatabaseSeeder extends Seeder
             ),
             array(
                 'key' => 'cat',
-                'name' => 'gif4.gif',
+                'name' => 'gif1.gif',
                 'created_at' => now(),
                 'updated_at' => now(),
             ),
             array(
                 'key' => 'cat',
-                'name' => 'gif5.gif',
+                'name' => 'gif3.gif',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ),
+            array(
+                'key' => 'boy',
+                'name' => 'gif8.gif',
                 'created_at' => now(),
                 'updated_at' => now(),
             ),
             array(
                 'key' => 'cat',
-                'name' => 'gif6.gif',
+                'name' => 'gif1.gif',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ),
+            array(
+                'key' => 'boy',
+                'name' => 'gif8.gif',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ),
+            array(
+                'key' => 'cat',
+                'name' => 'gif3.gif',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ),
+            array(
+                'key' => 'cat',
+                'name' => 'gif1.gif',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ),
+            array(
+                'key' => 'cat',
+                'name' => 'gif3.gif',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ),
+            array(
+                'key' => 'cat',
+                'name' => 'gif1.gif',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ),
+            array(
+                'key' => 'cat',
+                'name' => 'gif3.gif',
                 'created_at' => now(),
                 'updated_at' => now(),
             )

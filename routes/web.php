@@ -13,17 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/gif');
+
 });
 
-Auth::routes();
+Route::get('/home', function () {
+    return redirect('/gif');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/gif', [App\Http\Controllers\Gif::class, 'index'])->name('gif.index')->middleware('auth');
 

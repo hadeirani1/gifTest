@@ -33,8 +33,8 @@
                 </div>
                 <br/>
                 <div class="col-sm-6 text-right">
-        @if(isset($gifKeyData['meta']['links']))
-            <em>{{count($gifKeyData['meta']['links'])}} GIFs found</em>
+        @if(isset($gifKeyData['meta']['total']))
+            <em>{{$gifKeyData['meta']['total']}} GIFs found</em>
         @endif
         </div>
         <br/>

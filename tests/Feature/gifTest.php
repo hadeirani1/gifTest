@@ -8,18 +8,11 @@ use Tests\TestCase;
 
 class gifTest extends TestCase
 {
+
+
     /**
-     * A basic test example.
-     *
-     * @return void
+     * @test
      */
-    public function test_example()
-    {
-        $response = $this->get('/');
-
-        $response->assertStatus(200);
-    }
-
     public function auth_user_can_visit_gif_app_and_see_all_gifs()
     {
         $user = User::factory()->make();
