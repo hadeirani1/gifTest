@@ -7,56 +7,84 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## GIF browsing app
+This system help you to perform a keyword search against the API and display result, you should register and login at first. 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+</p>
+## Working steps
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Below you can find all working steps headlines:
 
-## Learning Laravel
+- create new project:
+laravel new testProj
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Create GIF controller:
+php artisan make:controller Gif
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Create GIF API Model/Controller/Migration:
+php artisan make:model GifApi -a
 
-## Laravel Sponsors
+- Create resource collection RESTFULL APIs:
+php artisan make:resource GifCollection
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- Install required packages:
+composer require laravel/ui
+composer require laravel/legacy-factories
 
-### Premium Partners
+- Prepair UI and DB:
+php artisan ui vue --auth
+php artisan ui bootstrap --auth
+php artisan ui bootstrap
+npm install && npm run dev
+php artisan migrate
+php artisan db:seed
+php artisan migrate:fresh
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
+</p>
 
-## Contributing
+## Setup system on your machine steps:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- download all files then uncompress folders.
 
-## Code of Conduct
+- use the command "composer install" to download required packages.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- copy .env.example and name it .env
 
-## Security Vulnerabilities
+- create the needed database then update .env file to fill the below information:
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=gifapptest
+DB_USERNAME=root
+DB_PASSWORD=
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- run the below DB commands:
 
-## License
+php artisan migrate
+php artisan db:seed
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- you should deloy using two ports, the first one for website and the second for APIs:
+
+	php artisan serve --port 8000
+	php artisan serve --port 8001
+
+- now you can visit:
+
+web app:
+http://localhost:8000/gif
+http://localhost:8000/api/gif?gif-key=cat
+
+- You can test function using phpunit using the command:
+./vendor/bin/phpunit
+
+- there are some fake data to test project, you can insert into database using the command:
+php artisan db:seed
+
+
+</p>
+
+## Future works could be done:
+
+- Integration system with Algolia for AI-powered search & discovery and auto-complete.
+- using passport for APIs as a middleware.
